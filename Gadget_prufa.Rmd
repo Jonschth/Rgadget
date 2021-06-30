@@ -1,0 +1,22 @@
+---
+title: "Gadget_prufa"
+author: "Jón Sch. Thorsteinsson"
+date: "6/28/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+install.packages("devtools")
+devtools::install_github("gadget-framework/rgadget")
+```
+
+```{r}
+library(Rgadget)
+```
+
+
+
