@@ -9,6 +9,14 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+
+```{r, setup, include=FALSE}
+knitr::opts_knit$set(root.dir = 'C://Users//Lenovo//Documents//blaa_hagkerfi')
+```
+
+
+
+
 ```{r}
 install.packages("devtools")
 devtools::install_github("gadget-framework/rgadget")
@@ -16,7 +24,32 @@ devtools::install_github("gadget-framework/rgadget")
 
 ```{r}
 library(Rgadget)
+
+theme_set(theme_light()) ## set the plot theme (optional)
+
+library(patchwork)  ## optional packages 
+scale_fill_crayola <- function(n = 100, ...) {
+  
+  # taken from RColorBrewer::brewer.pal(12, "Paired")
+  pal <- c("#A6CEE3", "#1F78B4", "#B2DF8A", "#33A02C",
+           "#FB9A99", "#E31A1C", "#FDBF6F", "#FF7F00",
+           "#CAB2D6", "#6A3D9A", "#FFFF99", "#B15928")
+  pal <- rep(pal, n)
+  ggplot2::scale_fill_manual(values = pal, ...)
+  
+}
 ```
+
+```{r}
+system.file('extdata', 'cod_model.tgz', package = 'Rgadget')%>% 
+  untar(exdir = path.expand('./gadget_example/'))
+
+
+
+```
+```
+
+
 
 
 
